@@ -2,7 +2,6 @@ import React from "react";
 import type { NextPage } from "next";
 import { BsPerson } from "react-icons/bs";
 import { theme, css } from "twin.macro";
-import Layout from "../components/Layout";
 import CardItem from "../components/view/CardItem";
 import useEmblaCarousel from "embla-carousel-react";
 
