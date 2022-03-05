@@ -5,6 +5,7 @@ import { theme, css } from "twin.macro";
 import CardItem from "../components/view/CardItem";
 import useEmblaCarousel from "embla-carousel-react";
 import { updateDOM } from "../services/drakMode";
+import PageWrap from "../components/PageWrap";
 
 const Home: NextPage = () => {
 	const ids = [0, 1, 2, 3];
@@ -13,24 +14,6 @@ const Home: NextPage = () => {
 		skipSnaps: false,
 	});
 
-	return (
-		<Layer>
-			<Carousel ref={carouselRef}>
-				{ids.map((id) => {
-					return (
-						<CarouselItem key={id}>
-							<CardItem id={String(id)} />
-						</CarouselItem>
-					);
-				})}
-			</Carousel>
-		</Layer>
-	);
-};
-
-export default Home;
-
-export function Layer({ children }: { children: React.ReactNode }) {
 	const handleClick = React.useCallback(() => {
 		console.log("handle click");
 		if (localStorage.theme === "light") {
@@ -40,15 +23,18 @@ export function Layer({ children }: { children: React.ReactNode }) {
 		}
 		updateDOM();
 	}, []);
-	return (
-		<div
-			tw="relative dark:bg-black"
-			css={css`
-				height: 100vh;
-			`}
-		>
-			{children}
 
+	return (
+		<PageWrap>
+			<Carousel ref={carouselRef}>
+				{ids.map((id) => {
+					return (
+						<CarouselItem key={id}>
+							<CardItem id={String(id)} />
+						</CarouselItem>
+					);
+				})}
+			</Carousel>
 			<div tw="fixed bottom-0 left-0 right-0 justify-center">
 				<div tw="flex w-full flex-row-reverse">
 					<button
@@ -62,6 +48,21 @@ export function Layer({ children }: { children: React.ReactNode }) {
 					</button>
 				</div>
 			</div>
+		</PageWrap>
+	);
+};
+
+export default Home;
+
+export function Layer({ children }: { children: React.ReactNode }) {
+	return (
+		<div
+			tw="relative dark:bg-black"
+			css={css`
+				height: 100vh;
+			`}
+		>
+			{children}
 		</div>
 	);
 }
