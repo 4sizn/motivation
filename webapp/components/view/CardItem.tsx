@@ -4,7 +4,7 @@ import { theme, css } from "twin.macro";
 import { BsShare, BsSuitHeart, BsPerson } from "react-icons/bs";
 
 export default function CardItem({ id }: { id: string }) {
-    //@ts-ignore
+	//@ts-ignore
 	const { quote, writer } = dummy[id];
 
 	return (
@@ -24,9 +24,11 @@ export default function CardItem({ id }: { id: string }) {
 						<Avatar src="/dog.jpg" size={30} />
 					</div>
 					<div tw="pt-6">
-						<p tw="text-6xl text-center font-medium">{quote}</p>
+						<p tw="text-6xl text-center font-medium dark:text-white">
+							{quote}
+						</p>
 						<div tw="text-center">
-							<span>{writer}</span>
+							<span tw="dark:text-white">{writer}</span>
 						</div>
 					</div>
 
@@ -40,7 +42,7 @@ export default function CardItem({ id }: { id: string }) {
 					>
 						<div tw="flex w-full justify-center">
 							<button
-								tw="text-4xl p-4"
+								tw="text-4xl p-4 text-black dark:text-white"
 								className="ripple"
 								css={css`
 									border: none;
@@ -50,7 +52,7 @@ export default function CardItem({ id }: { id: string }) {
 								<BsShare />
 							</button>
 							<button
-								tw="text-4xl p-4"
+								tw="text-4xl p-4 text-black dark:text-white"
 								className="ripple"
 								css={css`
 									border: none;

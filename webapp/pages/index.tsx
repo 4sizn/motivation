@@ -4,6 +4,7 @@ import { BsPerson } from "react-icons/bs";
 import { theme, css } from "twin.macro";
 import CardItem from "../components/view/CardItem";
 import useEmblaCarousel from "embla-carousel-react";
+import { updateDOM } from "../services/drakMode";
 
 const Home: NextPage = () => {
 	const ids = [0, 1, 2, 3];
@@ -31,16 +32,17 @@ export default Home;
 
 export function Layer({ children }: { children: React.ReactNode }) {
 	const handleClick = React.useCallback(() => {
-		//
+		console.log("handle click");
 		if (localStorage.theme === "light") {
 			localStorage.theme = "dark";
 		} else {
 			localStorage.theme = "light";
 		}
+		updateDOM();
 	}, []);
 	return (
 		<div
-			tw="relative"
+			tw="relative dark:bg-black"
 			css={css`
 				height: 100vh;
 			`}
@@ -51,7 +53,7 @@ export function Layer({ children }: { children: React.ReactNode }) {
 				<div tw="flex w-full flex-row-reverse">
 					<button
 						onClick={handleClick}
-						tw="text-lg"
+						tw="text-lg dark:bg-white"
 						css={css`
 							background-color: ${theme`colors.transparent`};
 						`}
