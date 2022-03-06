@@ -4,7 +4,7 @@ import "../styles/reset.css";
 import "../styles/carousel.css";
 import "../styles/ripple.css";
 import type { AppProps } from "next/app";
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import initialize from "../services/drakMode";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -12,7 +12,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient();
 function MyApp({ Component, pageProps }: AppProps) {
-	useLayoutEffect(() => {
+	useEffect(() => {
 		// customLog.init();
 		initialize();
 	}, []);

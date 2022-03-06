@@ -1,11 +1,13 @@
 import React from "react";
 import type { NextPage } from "next";
-import { BsPerson } from "react-icons/bs";
+import { BsPaintBucket, BsGear } from "react-icons/bs";
 import { theme, css } from "twin.macro";
 import CardItem from "../components/view/CardItem";
 import useEmblaCarousel from "embla-carousel-react";
 import { updateDOM } from "../services/drakMode";
 import PageWrap from "../components/PageWrap";
+import { getQouteList } from "./api/quote";
+import { useQuery } from "react-query";
 
 const Home: NextPage = () => {
 	const ids = [0, 1, 2, 3];
@@ -13,6 +15,9 @@ const Home: NextPage = () => {
 		axis: "x",
 		skipSnaps: false,
 	});
+
+	const quoteList = useQuery("quoteList", () => getQouteList());
+	console.log("quoteList", quoteList);
 
 	const handleClick = React.useCallback(() => {
 		console.log("handle click");
@@ -38,13 +43,16 @@ const Home: NextPage = () => {
 			<div tw="fixed bottom-0 left-0 right-0 justify-center">
 				<div tw="flex w-full flex-row-reverse">
 					<button
-						onClick={handleClick}
-						tw="text-lg dark:bg-white"
-						css={css`
-							background-color: ${theme`colors.transparent`};
-						`}
+						onClick={() => {}}
+						tw="text-lg dark:bg-white bg-transparent"
 					>
-						<BsPerson />
+						<BsGear />
+					</button>
+					<button
+						onClick={handleClick}
+						tw="text-lg dark:bg-white bg-transparent"
+					>
+						<BsPaintBucket />
 					</button>
 				</div>
 			</div>
