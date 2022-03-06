@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { PageTitle } from "../components/page";
+import { PageTitle } from "../../components/page";
 
 export const Setting: NextPage = () => {
 	return (

@@ -8,6 +8,7 @@ import { updateDOM } from "../services/drakMode";
 import PageWrap from "../components/PageWrap";
 import { getQouteList } from "./api/quote";
 import { useQuery } from "react-query";
+import { Router, useRouter } from "next/router";
 
 const Home: NextPage = () => {
 	const ids = [0, 1, 2, 3];
@@ -15,6 +16,8 @@ const Home: NextPage = () => {
 		axis: "x",
 		skipSnaps: false,
 	});
+
+	const router = useRouter();
 
 	const quoteList = useQuery("quoteList", () => getQouteList());
 	console.log("quoteList", quoteList);
@@ -43,7 +46,7 @@ const Home: NextPage = () => {
 			<div tw="fixed bottom-0 left-0 right-0 justify-center">
 				<div tw="flex w-full flex-row-reverse">
 					<button
-						onClick={() => {}}
+						onClick={() => router.push("/setting")}
 						tw="text-lg dark:bg-white bg-transparent"
 					>
 						<BsGear />
