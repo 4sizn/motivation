@@ -8,13 +8,34 @@ import { useEffect } from "react";
 import initialize from "../services/drakMode";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { persistQueryClient } from "react-query/persistQueryClient-experimental";
+import { createWebStoragePersistor } from "react-query/createWebStoragePersistor-experimental";
 // import { customLog } from "@4sizn/customlog-web";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			cacheTime: 1000 * 60 * 60 * 24, // 24 hours
+		},
+	},
+});
+
+function persistInitialize() {
+	const localStoragePersistor = createWebStoragePersistor({
+		storage: window.localStorage,
+	});
+
+	persistQueryClient({
+		queryClient,
+		persistor: localStoragePersistor,
+	});
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
 	useEffect(() => {
 		// customLog.init();
 		initialize();
+		persistInitialize();
 	}, []);
 
 	return (
