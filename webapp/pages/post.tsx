@@ -18,7 +18,7 @@ const Post: NextPage = () => {
 
 	return (
 		<PageWrap>
-			<PageTitle>카테고리</PageTitle>
+			<PageTitle>게시하기</PageTitle>
 			<SearchCategory />
 			<button
 				onClick={handleClickMixMode}

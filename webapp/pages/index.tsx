@@ -43,7 +43,7 @@ const Home: NextPage = () => {
 					);
 				})}
 			</Carousel>
-			<div tw="fixed bottom-0 left-0 right-0 justify-center">
+			<div tw="fixed bottom-0 left-0 right-0">
 				<div tw="flex w-full flex-row-reverse">
 					<button
 						onClick={() => router.push("/setting")}
