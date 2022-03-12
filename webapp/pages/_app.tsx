@@ -10,7 +10,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { persistQueryClient } from "react-query/persistQueryClient-experimental";
 import { createWebStoragePersistor } from "react-query/createWebStoragePersistor-experimental";
-// import { customLog } from "@4sizn/customlog-web";
+import { customLog } from "@4sizn/customlog-web";
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -33,7 +33,9 @@ function persistInitialize() {
 
 function MyApp({ Component, pageProps }: AppProps) {
 	useEffect(() => {
-		// customLog.init();
+		customLog.init({
+			timestamp: true,
+		});
 		initialize();
 		persistInitialize();
 	}, []);

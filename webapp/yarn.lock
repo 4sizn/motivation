@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@4sizn/customlog-web@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@4sizn/customlog-web/-/customlog-web-0.0.6.tgz#08c39e7bb35151b0e7c0ebcca279ed8dfc9759db"
-  integrity sha512-RfN0YewofmBQYDoXjocYITrNt+IB7ACg6bMyPCzv2x+409Rf47viVLZSoieX3596uMyJ/URJRd1Ea786IJwC/Q==
+"@4sizn/customlog-web@^0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@4sizn/customlog-web/-/customlog-web-0.0.12.tgz#4e4672ba1e107175b70586907bd1a018856c34bd"
+  integrity sha512-COfFJj8t5OnGcNjBmsUDC47N3ABVEpSr29lC7MPKSFA2sqbPon7jEoO6PATUVJbi1BLxqomvMYX+3gLo6mVcwQ==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.16.7":
   version "7.16.7"
