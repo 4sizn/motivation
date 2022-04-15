@@ -1,3 +1,4 @@
+/*
 import { NextPage } from "next";
 import React, {
 	forwardRef,
@@ -49,7 +50,7 @@ const SearchCategory = () => {
 					{categoryList.map((item, idx) => (
 						<CategoryItem {...item} key={`${item.name}-${idx}`} />
 					))}
-				</ul> */}
+				</ul> }
 			{!isSearchBarTyping && <RecommendCategory />}
 		</>
 	);
@@ -172,3 +173,6 @@ const Checked = () => {
 		</span>
 	);
 };
+*/
+
+export {};
