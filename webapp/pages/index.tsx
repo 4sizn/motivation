@@ -6,9 +6,9 @@ import CardItem from "../components/view/CardItem";
 import useEmblaCarousel from "embla-carousel-react";
 import { updateDOM } from "../services/drakMode";
 import PageWrap from "../components/PageWrap";
-import { getQouteList } from "./api/quote";
+import { getQuoteList } from "./api/quote";
 import { useQuery } from "react-query";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
 	const ids = [0, 1, 2, 3];
@@ -18,8 +18,7 @@ const Home: NextPage = () => {
 	});
 
 	const router = useRouter();
-
-	const quoteList = useQuery("quoteList", () => getQouteList());
+	const quoteList = useQuery("quoteList", () => getQuoteList());
 	console.log("quoteList", quoteList);
 
 	const handleClick = React.useCallback(() => {

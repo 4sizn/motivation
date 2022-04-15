@@ -1,0 +1,29 @@
+{
+  "count": 4,
+  "updatedDate": "1650029217569",
+  "qouteList": [
+    {
+      "quote": "주제다0",
+      "writer": "작가",
+      "writerImage": "",
+      "categories": ["base", "etc"]
+    },
+    {
+      "quote": "주제다1",
+      "writer": "작가",
+      "writerImage": "",
+      "categories": ["base", "etc"]
+    },
+    {
+      "quote": "주제다 2",
+      "writer": "희석",
+      "writerImage": "",
+      "categories": ["base", "etc"]
+    },
+    {
+      "quote": "머리가 멍청하면 손발이 고생한다",
+      "writer": "희석",
+      "categories": ["base", "etc"]
+    }
+  ]
+}
