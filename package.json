@@ -1,0 +1,8 @@
+{
+  "name": "motivation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/4sizn/motivation.git",
+  "author": "4sizn <4sizn@naver.com>",
+  "license": "MIT"
+}
